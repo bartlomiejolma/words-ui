@@ -1,8 +1,14 @@
 import React from "react";
+import TitleBar from "./TitleBar";
 import WordsList from "./WordsList";
 
 function App() {
-  return <WordsList />;
+  return (
+    <>
+      <TitleBar/>
+      <WordsList />
+    </>
+  );
 }
 
 export default App;
