@@ -31,7 +31,7 @@ const Drawer = ({ open, handleDrawerClose }: DrawerProps) => {
 };
 
 const StyledOpenPaper = styled(Paper)`
-  width: 30%;
+  width: ${({ theme }) => theme.appDrawer.width};
 `;
 
 export default Drawer;
