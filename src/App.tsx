@@ -14,6 +14,8 @@ import {
 import TitleBar from "./TitleBar";
 import WordsList from "./WordsList";
 
+import createAppTheme from "./createAppTheme";
+
 const Progress = () => {
   return <div>Progress</div>;
 };
@@ -21,7 +23,7 @@ const AddWord = () => {
   return <div>Add Word</div>;
 };
 
-const customTheme = createMuiTheme({
+const customTheme = createAppTheme({
   palette: {
     type: "dark",
   },
