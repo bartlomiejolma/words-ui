@@ -1,17 +1,31 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { List, ListItem } from "@material-ui/core";
+import axios from "axios";
 
-const fetchWords = ():Promise<Array<string>> => Promise.resolve(["first", "second"])
+interface Result {
+  data: Array<Word>;
+}
+
+interface Word {
+  name: string;
+  id: number;
+}
+const fetchWords = (): Promise<Result> =>
+  axios.get("http://localhost:5000/words");
+
 function App() {
+  const [words, setWords] = useState<Word[]>([]);
 
-  const [words, setWords] = useState<string[]>([])
-
-  useEffect(()=> {
-    fetchWords().then((result) => setWords(result))
-  },[])
-  return <List >
-    {words.map((word)=> <ListItem>{word}</ListItem>)}
-  </List>;
+  useEffect(() => {
+    fetchWords().then((result: Result) => setWords(result.data));
+  }, []);
+  return (
+    <List>
+      {words.map((word: Word) => (
+        <ListItem key={word.id}>{word.name}</ListItem>
+      ))}
+    </List>
+  );
 }
 
 export default App;
