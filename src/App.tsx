@@ -10,15 +10,7 @@ function App() {
     fetchWords().then((result) => setWords(result))
   },[])
   return <List >
-    <ListItem>
-      First
-    </ListItem>
-    <ListItem>
-      Second
-    </ListItem>
-    <ListItem>
-      Third
-    </ListItem>
+    {words.map((word)=> <ListItem>{word}</ListItem>)}
   </List>;
 }
 
