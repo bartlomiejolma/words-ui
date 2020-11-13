@@ -1,9 +1,7 @@
-import { Container, IconButton } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Drawer from "@material-ui/core/Drawer";
-import { ChevronLeftSharp } from "@material-ui/icons";
-import Divider from "@material-ui/core/Divider";
+import Drawer from "./Drawer";
 
 import TitleBar from "./TitleBar";
 import WordsList from "./WordsList";
@@ -23,17 +21,7 @@ function App() {
   return (
     <Router>
       <TitleBar handleMenuClick={handleDrawerOpen} />
-      <Drawer
-        anchor="left"
-        onClose={handleDrawerClose}
-        open={open}
-        variant="persistent"
-      >
-        <IconButton onClick={handleDrawerClose}>
-          <ChevronLeftSharp />
-        </IconButton>
-        <Divider />
-      </Drawer>
+      <Drawer open={open} handleDrawerClose={handleDrawerClose} />
       <Container>
         <Switch>
           <Route path="/progress">
