@@ -1,5 +1,11 @@
 import React from "react";
-import { Drawer as MuiDrawer, Divider, IconButton } from "@material-ui/core";
+import {
+  Drawer as MuiDrawer,
+  Divider,
+  IconButton,
+  Paper,
+} from "@material-ui/core";
+import styled from "styled-components";
 
 import { ChevronLeftSharp } from "@material-ui/icons";
 
@@ -14,6 +20,7 @@ const Drawer = ({ open, handleDrawerClose }: DrawerProps) => {
       onClose={handleDrawerClose}
       open={open}
       variant="persistent"
+      PaperProps={{ component: StyledOpenPaper }}
     >
       <IconButton onClick={handleDrawerClose}>
         <ChevronLeftSharp />
@@ -22,5 +29,9 @@ const Drawer = ({ open, handleDrawerClose }: DrawerProps) => {
     </MuiDrawer>
   );
 };
+
+const StyledOpenPaper = styled(Paper)`
+  width: 30%;
+`;
 
 export default Drawer;
