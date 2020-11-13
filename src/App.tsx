@@ -1,4 +1,5 @@
 import { Container } from "@material-ui/core";
+import { StylesProvider } from "@material-ui/core/styles";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Drawer from "./Drawer";
@@ -19,23 +20,25 @@ function App() {
   const handleDrawerOpen = () => setOpen(true);
   const handleDrawerClose = () => setOpen(false);
   return (
-    <Router>
-      <TitleBar handleMenuClick={handleDrawerOpen} />
-      <Drawer open={open} handleDrawerClose={handleDrawerClose} />
-      <Container>
-        <Switch>
-          <Route path="/progress">
-            <Progress />
-          </Route>
-          <Route path="/addWord">
-            <AddWord />
-          </Route>
-          <Route path="/">
-            <WordsList />
-          </Route>
-        </Switch>
-      </Container>
-    </Router>
+    <StylesProvider>
+      <Router>
+        <TitleBar handleMenuClick={handleDrawerOpen} />
+        <Drawer open={open} handleDrawerClose={handleDrawerClose} />
+        <Container>
+          <Switch>
+            <Route path="/progress">
+              <Progress />
+            </Route>
+            <Route path="/addWord">
+              <AddWord />
+            </Route>
+            <Route path="/">
+              <WordsList />
+            </Route>
+          </Switch>
+        </Container>
+      </Router>
+    </StylesProvider>
   );
 }
 
