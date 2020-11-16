@@ -1,4 +1,4 @@
-import { Container } from "@material-ui/core";
+import { Container, CssBaseline } from "@material-ui/core";
 import { StylesProvider } from "@material-ui/core/styles";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -34,6 +34,7 @@ function App() {
       <MuiThemeProvider theme={customTheme}>
         <ThemeProvider theme={customTheme}>
           <Router>
+            <CssBaseline />
             <TitleBar handleMenuClick={handleDrawerOpen} />
             <Drawer open={open} handleDrawerClose={handleDrawerClose} />
             <Container>
