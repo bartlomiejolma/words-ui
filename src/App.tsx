@@ -12,12 +12,10 @@ import TitleBar from "./TitleBar";
 import WordsList from "./WordsList";
 
 import createAppTheme from "./createAppTheme";
+import AddWord from "./AddWord";
 
 const Progress = () => {
   return <div>Progress</div>;
-};
-const AddWord = () => {
-  return <div>Add Word</div>;
 };
 
 const customTheme = createAppTheme({
