@@ -6,10 +6,7 @@ import Drawer from "./Drawer";
 
 import { ThemeProvider } from "styled-components";
 
-import {
-  createMuiTheme,
-  ThemeProvider as MuiThemeProvider,
-} from "@material-ui/core/styles";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 
 import TitleBar from "./TitleBar";
 import WordsList from "./WordsList";
