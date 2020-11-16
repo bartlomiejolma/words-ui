@@ -34,7 +34,9 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
     ]
   },
   "browserslist": {
