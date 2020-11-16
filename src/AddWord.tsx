@@ -7,10 +7,12 @@ interface FormData {
   word: string;
 }
 
+const makeSavingRequest = (word: string) => Promise.resolve(word);
 const AddWord = () => {
-  const { register, handleSubmit } = useForm<FormData>();
-  const onSubmit = handleSubmit(({ word }) => {
-    console.log(word);
+  const { register, handleSubmit, reset } = useForm<FormData>();
+  const onSubmit = handleSubmit(async ({ word }) => {
+    await makeSavingRequest(word);
+    reset();
   });
 
   return (
