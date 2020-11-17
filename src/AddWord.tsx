@@ -1,4 +1,4 @@
-import { Box, Button, TextField } from "@material-ui/core";
+import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import React from "react";
 
 import { useForm } from "react-hook-form";
@@ -17,7 +17,8 @@ const AddWord = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <Box flexDirection="row">
+      <Grid container direction="column" spacing={3}>
+        <Typography variant="h6">Add new word</Typography>
         <TextField
           name="word"
           label="Word"
@@ -25,7 +26,7 @@ const AddWord = () => {
           required={true}
         />
         <Button type="submit">Add Word</Button>
-      </Box>
+      </Grid>
     </form>
   );
 };
