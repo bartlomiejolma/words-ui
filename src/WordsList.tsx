@@ -1,17 +1,6 @@
 import { List, ListItem } from "@material-ui/core";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-
-interface Result {
-  data: Array<Word>;
-}
-
-interface Word {
-  name: string;
-  id: number;
-}
-const fetchWords = (): Promise<Result> =>
-  axios.get("http://localhost:5000/words");
+import { fetchWords, Word, Result } from "./api";
 
 const WordsList = () => {
   const [words, setWords] = useState<Word[]>([]);
